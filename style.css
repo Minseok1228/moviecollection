@@ -1,0 +1,130 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    background-color: black;
+    padding-bottom: 60px;
+    color: rgb(216, 213, 213);
+}
+
+header>h1 {
+    font-size: 120px;
+    margin: 50px;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(29, 28, 28);
+}
+
+.card_list {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: grid;
+    place-items: center;    /*grid내 아이템들 가운데 정렬*/
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /*repeat(5,1fr);*/
+    row-gap: 20px;
+
+    grid-column-start: 4;
+    grid-column-end: 2;
+}
+.card_listko {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: grid;
+    place-items: center;    /*grid내 아이템들 가운데 정렬*/
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /*repeat(5,1fr);*/
+    row-gap: 20px;
+
+    grid-column-start: 4;
+    grid-column-end: 2;
+}
+
+.movie_card {
+    width: 250px;
+    height: 400px;
+    position: relative;
+    transition: transform 1s;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 1s;
+}
+
+.card_front {
+    z-index: 10;
+    color: white;
+}
+
+.card_middle {
+    z-index: 3;
+    background-color: black;
+    transform: rotateY(180deg);
+}
+
+.card_back {
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+}
+
+.movie_card:hover {
+    transform: rotateY(180deg);
+    transition: transform 1s;
+}
+
+.movie_card:hover .card_front {
+    z-index: 0;
+}
+
+.movie_card:hover .card_back {
+    z-index: 4;
+}
+
+.movie_image {
+    width: 100%;
+    height: 320px;
+    display: block;
+}
+
+.movie_title {
+    padding-top: 15px;
+    background-color: rgb(78, 76, 76);
+    width: 100%;
+    height: 35px;
+}
+
+.star {
+    background-color: rgb(78, 76, 76);
+    width: 100%;
+    height: 20px;
+    padding-bottom: 10px;
+}
+
+.movie_story {
+    color: white;
+    padding: 30px 20px 10px 20px;
+    width: 230;
+    height: 360px;
+    font-size: 0.9rem;
+}
+.block {
+    display: none;
+}
+
+.noMovie{
+    font-size: 150px;
+    color: white;
+}
