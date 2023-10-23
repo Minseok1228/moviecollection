@@ -20,6 +20,13 @@ header>h1 {
     margin: 50px;
 }
 
+nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 body {
     text-align: center;
     background-color: rgb(29, 28, 28);
