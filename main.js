@@ -77,7 +77,6 @@ function searchMovie(e) {
 
     const search_title = searchStr.value.toUpperCase()
     const title = document.querySelectorAll(".movie_title")
-    console.log(title)
 
     const title_box = Array.from(title)
     const sellectMovie = title_box.filter((a) => {
@@ -101,3 +100,5 @@ function searchMovie(e) {
 
 searchStr.addEventListener('keyup', searchMovie)
 window.addEventListener('submit', searchMovie)
+
+
