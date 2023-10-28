@@ -32,23 +32,29 @@ body {
     background-color: rgb(29, 28, 28);
 }
 
-.card_list {
+.card-list {
     margin-top: 50px;
     margin-bottom: 100px;
     display: grid;
-    place-items: center;    /*grid내 아이템들 가운데 정렬*/
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /*repeat(5,1fr);*/
+    place-items: center;
+    /*grid내 아이템들 가운데 정렬*/
+
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; repeat(5,1fr); */
     row-gap: 20px;
 
     grid-column-start: 4;
     grid-column-end: 2;
 }
-.card_listko {
+
+.card-listko {
     margin-top: 50px;
     margin-bottom: 100px;
     display: grid;
-    place-items: center;    /*grid내 아이템들 가운데 정렬*/
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /*repeat(5,1fr);*/
+    place-items: center;
+    /*grid내 아이템들 가운데 정렬*/
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    /*repeat(5,1fr);*/
     row-gap: 20px;
 
     grid-column-start: 4;
@@ -127,11 +133,12 @@ body {
     height: 360px;
     font-size: 0.9rem;
 }
+
 .block {
     display: none;
 }
 
-.noMovie{
+.no-movie {
     font-size: 150px;
     color: white;
 }

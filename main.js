@@ -6,17 +6,17 @@ const options = {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhODI4NzdkZmQzOTRmNzRkZmQ0YmQ4M2E5MWJhOWRkMSIsInN1YiI6IjY1MmY4ODI2MzU4ZGE3NWI2MWY5ZTg4YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Dhw6p5_0Qh0pVWyQiquPzTrZJcmfiO1SU2nGz8oL7og'
     }
 };
-const movie_list = document.querySelector(".card_list")
+const movie_list = document.querySelector(".card-list")
 
 fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
     .then(response => response.json())
     .then(response => {
-        movies = response.results
+        const movies = response.results
 
 
         showMovieList(movies)
     })
-    .catch(err => console.error(err));
+    .catch(err => console.error(err))
 
 //영화 보여주기
 function showMovieList(movies) {
@@ -38,14 +38,14 @@ function showMovieList(movies) {
                 <div class="star">🎦${release_date} ⭐${vote_average}</div>
             `
         append_front_card.innerHTML = front_temp_html
-        movie_card.append(append_front_card);
+        movie_card.append(append_front_card)
 
         //middle
         const append_middle_card = document.createElement('div')
         append_middle_card.classList.add('card')
         append_middle_card.classList.add('card_middle')
         let middle_temp_html = `<div class="movie_story">${overview}</div>`
-        append_middle_card.innerHTML = middle_temp_html;
+        append_middle_card.innerHTML = middle_temp_html
         movie_card.append(append_middle_card)
 
         //back
@@ -63,9 +63,9 @@ function showMovieList(movies) {
 }
 
 // //영화이름찾기
-const searchBox = document.querySelector('.searchBox')
-const searchStr = document.querySelector('#strSearch')
-const no = document.querySelector('.noMovie')
+const searchBox = document.querySelector('.search-box')
+const searchStr = document.querySelector('#str-search')
+const no = document.querySelector('.no-movie')
 
 function searchMovie(e) {
     e.preventDefault();
@@ -89,11 +89,11 @@ function searchMovie(e) {
 
     let i = 0;
     wantAll.forEach(element => {
-        if(element.classList.contains('block')){
+        if (element.classList.contains('block')) {
             i += 1;
         }
     });
-    if(i === wantAll.length){
+    if (i === wantAll.length) {
         no.innerHTML = 'NO movie data.'
     }
 }
